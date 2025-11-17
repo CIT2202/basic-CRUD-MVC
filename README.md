@@ -54,26 +54,10 @@ Now move onto [Completing the practical work](#practical).
 - Have a good look through the code in _index.php_. Make sure you understand what each line of code is doing.
 
 ### Getting the other operations to work
-
-- If you click on one of the links in _index.php_, this takes you to _show.php_, and you'll get an error. Open up _show.php_ and edit the connection settings just like you did in _index.php_. The _show.php_ page should then work.
-- Continue by changing the connection settings in the other files to get the whole application to work. Make sure you look carefully through the code so you understand how the application has been built.
+- You should find that the create operation works fine. You should be able to add a new film and see its title listed on the homepage. 
+- If you click on one of the links in _index.php_, this takes you to _show.php_, and you'll get an error. 
+  - You need to add code to _show.php_ so this page will work. The comments in this file give you some advice on how to do this. You only need to edit _show.php_. You don't need to make any changes to the model or view files. 
+- Once _show.php_ works, move on to getting the update and delete operations to work as well. Again, there are comments in these files that should help you. 
 
 ## Testing your understanding
-
-### Questions
-
-- _create.php_ doesn't connect to the database. Why?
-- In _show.php_ the details for a single film are shown, how does this page 'know' which film to display i.e. how is data passed from _index.php_ to _show.php_?
-- _destroy.php_ (and _update.php_) also operate on a single film. How do these pages know which film to delete/update e.g. how is data passed from _show.php_ to _destroy.php_? How is this different to the way in which data is passed from _index.php_ to _show.php_?
-- _index.php_ uses the `$conn->query()` method to execute SQL, why does _show.php_ use `$stmt->execute()`? Why isn't `$conn->query()` used in _show.php_?
-
-### Editing the code
-
-- In _index.php_ how can we display the year for the film alongside the title e.g. Jaws (1975)
-- How would you edit the code so that the list of films in _index.php_ appears in date order with the most recent first.
-
-### Optional extra
-
-Make sure you really understand the basic CRUD code is this repository. However, if you fully understand the code, try the following:
-
-- These examples are as simple as they can be. How could you perform some basic user input validation i.e. testing that the user has completed all the fields when adding a new film. Hint: You will need to add some code in _store.php_ to test the values from the form. If you detect a problem, `echo` out a message to the user and use `die();` to prevent the INSERT code from running.
+One weakness is the user doesn't get any feedback when they have successfully created, updated or deleted a film. How can you use PHP sessions to pass a success message back to the home page so the user gets confirmation for each of these actions. 

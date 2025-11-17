@@ -12,8 +12,8 @@ $duration = $_POST['duration'];
 $certId = $_POST['certId'];
 
 //Ask the model to update the film
-update($id, $title, $year, $duration, $certId);
 
-header('Location: index.php');
+//Redirect to the home page
+
 
 ?>
