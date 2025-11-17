@@ -1,6 +1,6 @@
 # CRUD Operation using PDO
 
-These examples demonstrate the use of PDO to implement CRUD (Create, Read, Update, Delete) functionality for a simple web application.
+These examples demonstrate the use of PDO to implement CRUD (Create, Read, Update, Delete) functionality using an MVC architecture for a simple web application.
 
 - [Follow these instructions if you are using Codespaces](#codespaces)
 - [Follow these instruction if you are using XAMPP](#xampp)
