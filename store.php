@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Load the model functions
 require "models/film-model.php";
 
@@ -15,5 +16,6 @@ $certId = $_POST['certId'];
 
 //Ask the model to insert the film
 store($title, $year, $duration, $certId);
+$_SESSION["feedback"] = "Successfully added '{$title}' to the database";
 //Redirect to the home page
 header('Location: index.php');
