@@ -26,6 +26,11 @@ require "views/partials/header.view.php";
 <input type="text" id="duration" name="duration" value="<?php echo $film["duration"];?>">
 </div>
 <div>
+	<label for="certId">Certificate id number (1='U', 2='PG', 3='12', 4='15', 5='18')
+	</label>
+	<input type="text" id="certId" name="certId" value="<?php echo $film["certificate_id"];?>">
+</div>
+<div>
 <button type="submit">Save Changes</button>
 </div>
 </form>

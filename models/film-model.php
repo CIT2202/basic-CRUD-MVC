@@ -1,6 +1,6 @@
 <?php
 // Model
-function getConnection()
+function getConnection():PDO
 {
 	try{
        $conn = new PDO('mysql:host=localhost;dbname=cit2202', 'root', '');
@@ -13,12 +13,12 @@ function getConnection()
 	return $conn;
 }
 
-function closeConnection($conn)
+function closeConnection(PDO $conn)
 {
 	$conn=null;
 }
 
-function all()
+function all():array
 {
 	$conn = getConnection();
 	$query = "SELECT id, title, year, duration FROM films";
@@ -28,10 +28,10 @@ function all()
 	return $films;
 }
 
-function find($id)
+function find(int $id):array
 {
 	$conn = getConnection();
-	$stmt = $conn->prepare("SELECT id, title, year, duration FROM films WHERE films.id = :id");
+	$stmt = $conn->prepare("SELECT id, title, year, duration, certificate_id FROM films WHERE films.id = :id");
 	$stmt->bindValue(':id',$id);
 	$stmt->execute();
 	$film=$stmt->fetch();
@@ -39,7 +39,8 @@ function find($id)
 	return $film;
 }
 
-function store($title, $year, $duration, $certId){
+function store(string $title, int $year, int $duration, int $certId):void
+{
 	$conn = getConnection();
 	$query="INSERT INTO films (id, title, year, duration, certificate_id) VALUES (NULL, :title, :year, :duration, :certId)";
 	$stmt=$conn->prepare($query);
@@ -51,7 +52,8 @@ function store($title, $year, $duration, $certId){
 	closeConnection($conn);
 }
 
-function update($id,$title,$year,$duration,$certId){
+function update(int $id, string $title,int $year,int $duration,int $certId):void
+{
 	$conn = getConnection();
 	$query="UPDATE films SET title=:title, year=:year, duration=:duration, certificate_id=:certificate_id WHERE id=:id";
 	$stmt=$conn->prepare($query);
@@ -64,7 +66,7 @@ function update($id,$title,$year,$duration,$certId){
 	closeConnection($conn);
 }
 
-function delete($id){
+function delete(int $id):void{
 	$conn = getConnection();
 	//SQL DELETE for deleting rows
     //First we need to delete the film's records from the junction table
@@ -78,6 +80,5 @@ function delete($id){
     $stmt->bindValue(':id',$id);
     $stmt->execute();
     //Close the connect
-    $conn=NULL;
 	closeConnection($conn);
 }
