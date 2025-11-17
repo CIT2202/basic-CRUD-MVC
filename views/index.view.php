@@ -1,7 +1,12 @@
 <?php 
 $pageTitle="The Amazing Film App";
 require "views/partials/header.view.php";
+if(isset($_SESSION['feedback'])){
+    echo "<p>{$_SESSION['feedback']}</p>";
+    unset($_SESSION['feedback']);
+}
 ?>
+
 <h1>Here's a list of films</h1>
 <?php
 // The results from the database are returned as an array

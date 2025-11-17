@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Load the model functions
 require "models/film-model.php";
 
@@ -13,7 +14,8 @@ $certId = $_POST['certId'];
 
 //Ask the model to update the film
 update($id, $title, $year, $duration, $certId);
-
+$_SESSION["feedback"] = "Successfully updated the details for '{$title}'";
+//Redirect the user back to index.php
 header('Location: index.php');
 
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Load the model functions
 require "models/film-model.php";
 // Ask the model to get all the films
