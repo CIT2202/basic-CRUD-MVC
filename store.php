@@ -2,9 +2,6 @@
 //Load the model functions
 require "models/film-model.php";
 
-//Get the id from the hidden field in the form
-$id = $_POST['id'];
-
 //Basic form processing
 //Look at the name values of the form controls in create.view.php to see where these values 
 // e.g. $_POST['title'] comes from <input type="text" id="title" name="title">
