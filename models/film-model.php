@@ -3,7 +3,7 @@
 function getConnection():PDO
 {
 	try{
-       $conn = new PDO('mysql:host=localhost;dbname=cit2202', 'root', '');
+       $conn = new PDO('mysql:host=localhost;dbname=name-of-database', 'username', 'password');
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
 	catch (PDOException $exception)
