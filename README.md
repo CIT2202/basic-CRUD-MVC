@@ -35,6 +35,7 @@ You will need to change it to:
 
 ## Testing your understanding
 One weakness is the user doesn't get any feedback when they have successfully created, updated or deleted a film. How can you use PHP sessions to pass a success message back to the home page so the user gets confirmation for each of these actions. You will need to:
-    - Set a `$_SESSION` variable when the action is performed. 
-    - Test if this variable exists e.g. `isset($_SESSION['msg'])`. If it exists, display the value.
-    - Delete the variable, so the message doesn't show again e.g. `unset(isset($_SESSION['msg']))`
+
+ - Set a `$_SESSION` variable when the action is performed. 
+ - Test if this variable exists e.g. `isset($_SESSION['msg'])`. If it exists, display the value.
+ - Delete the variable, so the message doesn't show again e.g. `unset(isset($_SESSION['msg']))`
